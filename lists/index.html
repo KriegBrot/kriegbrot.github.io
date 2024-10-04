@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>HTML list generator</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="style.css" type="text/css">
+	<script src="listscript.js"></script>
+
+	 <!--Google Fonts-->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+	<div id="logo">
+		HTML list generator
+	</div>
+	<div id="tank">
+		<div id="listcreator">
+			<div id="panel">
+				<input type="submit" value="Create OL" onclick="CreateOL()"/>
+				<input type="submit" value="Create UL" onclick="CreateUL()"/>
+				Dummy Text:
+				<input type="text" id="dtext" value="List Item" size="15">
+				<input type="submit" value="Insert" onclick="NameChange()"/>
+			</div>
+			<div id="newlist"></div>
+		</div>
+		<div id="plainlist">
+			
+		</div>
+		<div style="clear:both;"></div>
+		<div id="code">
+			<div id="script"></div>
+			<div id="tocopy"><input type="submit" value="Copy code" onclick="CopyText()"/></div>
+		</div>
+	</div>
+</body>
+</html>
