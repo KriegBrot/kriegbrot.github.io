@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html lang="pl">
+<head>
+	<title>Kod genetyczny</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style.css" type="text/css">
+	<script defer src="main.js"></script>
+</head>
+
+<body>
+	<div id="whiteScreen"></div>
+	<div id="logo">
+		<header>
+			<div id="ltitle"><h1>DNA</h1><p>Kod genetyczny i ciągi aminokwasów</p></div>
+		</header>
+		<video autoplay muted loop id="dnavideo">
+			<source src="dnanimation.mp4" type="video/mp4">
+		</video>
+	</div>
+	<article>
+		<div id="info">
+			<b>Kwas deoksyrybonukleinowy (DNA)</b> jest materiałem genetycznym wszystkich organizmów, jest nośnikiem informacji genetycznej potrzebnej do syntezy białek (budulca naszych tkanek) i dziedziczenia cech.<br/><br/>
+			<b>Kwas rybonukleinowy (RNA)</b> to związek organiczny, który bierze udział w biosyntezie białek.<br/><br/>
+			<b>Kod genetyczny</b> to sposób zapisu informacji o budowie białek w sekwencji kwasów nukleinowych (DNA lub mRNA).
+		</div>
+	</article>
+	<main>
+		<div id="tank">
+			<article>
+				<header><h2>Budowa DNA i RNA</h2></header>
+				<p>DNA składa się z dwóch skręconych nici ułożonych równolegle do siebie tworząc podwójną helisę. Cząsteczka RNA jest jednoniciowa. Obie cząsteczki zbudowane są z nukleotydów, każdy nukleotyd składa się z reszty kwasu fosforowego, cukru pięciowęglowego i jednej z czterech zasad azotowych.</p>
+				<p>Nukleotydy tworzące jeden łańcuch są ze sobą połączone wiązaniami fosfodiestrowymi, oba łańcuchy (u DNA) są połączone wiązaniami wodorowymi.</p>
+				<img width="200px" src="dnaimg.png"/>
+				<p>Zasady azotowe wchodzące w skład nukleotydu DNA to: <span class="bEmp">G</span>uanina, <span class="bEmp">C</span>ytozyna, <span class="bEmp">A</span>denina lub <span class="bEmp">T</span>ymina. W czastęczce RNA zamiast tyminy występuje <span class="bEmp">U</span>racyl.</p>
+				<p>Nukleotydy ułożone kolejno w nici tworzą sekwencję. Zapisuje się ją za pomocą liter oznaczających zasady azotowe.</p>
+				<header><h2>Reguła komplementarności zasad</h2></header>
+				<p>Zgodnie z regułą komplementarności adenina łączy się z tyminą (lub uracylem w przypadku RNA), a guanina z cytozyną.</p>
+				<header><h2>Cechy kodu genetycznego</h2></header>
+				<p>Kod genetyczny składa się z kodonów, które kodują poszczególne aminokwasy tworzące białka. Każdy kodon składa się z trzech kolejnych nukleotydów.</p>
+				Kod genetyczny jest:
+				<ul>
+					<li>trójkowy</li>
+					<li>jednoznaczny</li>
+					<li>zdegenerowany</li>
+					<li>bezprzecinkowy</li>
+					<li>niezachodzący</li>
+					<li>uniwersalny</li>
+				</ul>
+				<header><h2>Sposób odczytywania informacji genetycznej</h2></header>
+				<p>Informacja genetyczna zawarta jest w DNA. DNA składa się z dwóch nici - kodującej i matrycowej. Nici te związane są ze sobą wiązaniami wodorowymi spełniającymi regułę komplementarności. Informacja genetyczna jest przepisywana z nici matrycowej na mRNA. Na podstawie sekwencji mRNA tworzony jest łańcuch aminokwasów budujących białko.</p>
+			</article>
+			<button onclick="Generate()">Generuj</button><button onclick="ClearAll()">Wyczyść</button>
+			<div class="generatorLine"><div class="desc">Nić kodująca DNA:</div><input type="text" autocomplete="off" onkeypress="Disable(0)" onkeydown="return /[aAtTcCgG]/i.test(event.key)" class="tinput" id="kdna"></div><div style="clear:both;"></div>
+			<div class="generatorLine"><div class="desc">Nić matrycowa DNA:</div><input type="text" autocomplete="off" onkeypress="Disable(1)" onkeydown="return /[aAtTcCgG]/i.test(event.key)" class="tinput" id="mdna"></div><div style="clear:both;"></div>
+			<div class="generatorLine"><div class="desc">mRNA:</div><input type="text" autocomplete="off" onkeypress="Disable(2)" onkeydown="return /[aAuUcCgG]/i.test(event.key)" class="tinput" id="mrna"></div><div style="clear:both;"></div>
+			<span style="font-size:0.75rem;color:#003183;">Łańcuch aminokwasów:</span><br/>
+			<div class="toutput" id="amino"></div>
+		</div>
+	</main>
+	<footer>The animation visible in the background is a combination of two slightly edited royalty free videos from website <a href="https://www.vecteezy.com/free-videos" target="_blank">Vecteezy</a>.</footer>
+</body>
+</html>

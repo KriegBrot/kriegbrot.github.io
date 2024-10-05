@@ -1,0 +1,257 @@
+﻿:root {
+	font-size: 24px;
+}
+
+@keyframes intro {
+	0% {
+		opacity: 1;
+	}
+	99% {
+		opacity: 0;
+		z-index: 2;
+	}
+	100% {
+		z-index: -1;
+		opacity: 0;
+	}
+}
+
+@keyframes leftSlide {
+	100% {left: 0; opacity: 1;}
+}
+
+body {
+	margin: 0px !important;
+	background-color: #ddd;
+	font-family: Verdana;
+}
+
+#whiteScreen {
+	background-color: white;
+	opacity: 1;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	z-index: 2;
+	animation-name: intro;
+	animation-duration: 1.25s;
+	animation-fill-mode: forwards;
+	animation-delay: 0.75s;
+}
+
+#logo {
+	width: 100%;
+	height: 400px;
+	background-color: black;
+	position: relative;
+	overflow: hidden;
+}
+
+#dnavideo {
+	position: absolute;
+	right: 0;
+	top: -250px;
+	min-width: 100%;
+	min-height: 100%;
+}
+
+#ltitle {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	z-index: 1;
+	color: white;
+	font-family: "Roboto Mono", monospace;
+	font-size: 5rem;
+	background: linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0));
+	padding-top: 150px;
+	padding-left: 13%;
+	line-height: 0.8;
+}
+
+#ltitle h1 {
+	position: relative;
+	left: -100px;
+	opacity: 0;
+	font-size: 5rem;
+	display: inline;
+	text-shadow: 0px 0px 10px white;
+	animation-name: leftSlide;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+	animation-delay: 0.9s;
+}
+
+#ltitle p {
+	font-size: 1rem;
+	left: -100px;
+	opacity: 0;
+	position: relative;
+	margin: 15px 6px;
+	text-shadow: none;
+	animation-name: leftSlide;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+	animation-delay: 1.5s;
+}
+
+#info {
+	width: 74%;
+	background-color: black;
+	color: white;
+	padding: 50px 13%;
+	text-align: justify;
+	font-family: "Roboto Mono", monospace;
+}
+
+#tank {
+	padding: 50px 13%;
+	font-family: "Prompt", sans-serif;
+	text-align: justify;
+}
+
+#tank h2 {
+	margin: 0;
+	font-family: "Oswald", sans-serif;
+	font-weight: normal;
+	font-size: 2rem;
+	color: #003183;
+}
+
+li::marker {
+	color: #003183;
+}
+
+.generatorLine {
+	margin-bottom: 30px;
+	height: auto;
+	display: flex;
+}
+
+.desc {
+	text-align: left;
+	float: left;
+	min-width: 135px;
+	max-width: 135px;
+	margin-top: auto;
+	margin-right: auto;
+	min-height: 72px;
+	font-size: 0.75rem;
+	color: #003183;
+	display: flex;
+	align-items: center;
+}
+
+.tinput {
+	text-align: center;
+	transition: all 0.2s ease-in-out;
+	width: 100%;
+	height: 65px;
+	font-size: 1.5rem;
+	letter-spacing: 6px;
+	background-color: white;
+	border: 1px solid black;
+	text-transform: uppercase;
+	outline: none;
+	float: right;
+	font-family: "Roboto Mono", monospace;
+	font-weight: 500;
+	border-radius: 15px;
+}
+
+.toutput {
+	text-align: center;
+	transition: all 0.2s ease-in-out;
+	width: calc(100%-20px);
+	border-radius: 15px;
+	overflow-x: hidden;
+	min-height: 47px;
+	height: auto;
+	font-size: 1.2rem;
+	background-color: white;
+	border: 1px solid black;
+	margin-top: 10px;
+	outline: none;
+	padding: 10px;
+	font-family: "Prompt", sans-serif;
+}
+
+.tinput:focus {
+	border: 1px solid #003183;
+	background-color: #e4f1ff;
+	outline: none;
+}
+
+input[disabled] {
+	color: black;
+}
+
+button {
+	background-color: #003183;
+	color: white;
+	padding: 15px 30px;
+	width: 150px;
+	margin-bottom: 30px;
+	margin-right: 20px;
+	font-size: 0.75rem;
+	font-family: "Prompt", sans-serif;
+	border: none;
+	box-sizing: border-box;
+	cursor: pointer;
+	border: none;
+	letter-spacing: 2px;
+	border-radius: 15px;
+	background: linear-gradient(135deg, #0043b4, #003183);
+	transition: all 0.15s ease-in-out;
+}
+
+button:hover {
+	filter: grayscale(40%);
+	text-shadow: 0px 0px 2px white;
+}
+
+button:active {
+	filter: grayscale(80%);
+	text-shadow: 0px 0px 4px white;
+}
+
+footer {
+	background-color: black;
+	color: white;
+	margin-top: 40px;
+	width: 74%;
+	text-align: justify;
+	padding: 50px 13%;
+}
+
+footer a {
+	text-decoration: none;
+	color: white;
+	transition: all 0.2s ease-in-out;
+}
+
+footer a:hover {
+	color: #ff7900;
+}
+
+footer a:visited {
+	text-decoration: none;
+	color: white;
+}
+
+@keyframes fadein {
+	from {color: white;}
+	to {color: black;}
+}
+
+.showanim {
+	color: black;
+	animation-name: fadein;
+	animation-duration: 0.3s;
+}
+
+.bEmp { 
+	font-weight: bold;
+	color: #003183;
+}
